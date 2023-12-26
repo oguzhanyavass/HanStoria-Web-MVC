@@ -1,0 +1,70 @@
+﻿/* Custom CSS for product detail page */
+
+.product-card {
+    /* Card style */
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+    .product-card img {
+        /* Image style */
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+        object-fit: cover;
+    }
+
+    .product-card .card-title {
+        /* Title style */
+        font-family: 'Roboto', sans-serif;
+        font-weight: bold;
+        color: #333;
+    }
+
+    .product-card .badge {
+        /* Badge style */
+        font-size: 14px;
+        padding: 5px 10px;
+    }
+
+        .product-card .badge.bg-success {
+            /* Stock badge style */
+            background-color: #28a745;
+            color: #fff;
+        }
+
+        .product-card .badge.bg-danger {
+            /* Out of stock badge style */
+            background-color: #dc3545;
+            color: #fff;
+        }
+
+        .product-card .badge.bg-warning {
+            /* Rating badge style */
+            background-color: #ffc107;
+            color: #212529;
+        }
+
+    .product-card #product-price {
+        /* Price style */
+        font-family: 'Roboto', sans-serif;
+        font-weight: bold;
+        color: #28a745;
+    }
+
+    .product-card .btn {
+        /* Button style */
+        font-size: 16px;
+        padding: 10px 20px;
+        border-radius: 5px;
+    }
+
+#description {
+    /* Description style */
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    color: #333;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-top: 1px solid #dee2e6;
+}

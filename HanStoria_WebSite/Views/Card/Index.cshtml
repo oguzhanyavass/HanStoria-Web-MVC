@@ -1,0 +1,97 @@
+﻿@model HanStoria_WebSite.Models.Card
+@{
+    ViewBag.Title = "Index";
+}
+
+    <div class="container pb-5">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Alışveriş Sepeti</h2>
+                <hr />
+
+                @if (Model.CardLines.Count > 0)
+                {
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Adet</th>
+                                <th>Ürün</th>
+                                <th>Fiyat</th>
+                                <th>Toplam Fiyat</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.CardLines)
+                            {
+                                <tr>
+                                    <td>
+                                        <img src="@item.Product.PhotoName" width="100" />
+                                    </td>
+                                    <td>
+                                        @item.Quantity
+                                    </td>
+                                    <td>
+                                        @item.Product.Name
+                                    </td>
+                                    <td>
+                                        @item.Product.Price
+                                    </td>
+                                    <td>
+                                        @((item.Product.Price*item.Quantity).ToString("c"))
+                                    </td>
+                                    <td>
+                                        @using (Html.BeginForm("RemoveFromCard", "Card"))
+                                        {
+                                            @Html.Hidden("Id", item.Product.Id)
+                                            <button type="submit" class="btn btn-dark">
+                                                <img src="~/icon/circle-xmark-solid.svg" />
+                                                Sil
+                                            </button>
+                                        }
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="4"></td>
+                                <td>
+                                    @Model.Total().ToString("c")
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                        <button onclick="redirectToPage('/Home/List')" class="btn btn-dark">
+                            Alışverişe Devam Et
+                            <img src="~/icon/signs-post-solid.svg" style="padding:10px" width="40" />
+                        </button>
+                        <button onclick="redirectToPage('/Card/Checkout')" class="btn btn-success">
+                            Alışverişi Tamamla
+                            <img src="~/icon/money-check-solid.svg" style="padding:10px" width="40" />
+                        </button>
+                }
+                else
+                {
+                    <div class="alert alert-warning" role="alert">
+                        Sepetinizde Ürün Bulunmamaktadır!
+                        <img src="~/icon/face-frown-regular.svg" style="padding:10px" width="40" />
+                    </div>
+                    <div>
+                        <button onclick="redirectToPage('/Home/List')" class="btn btn-dark">
+                            Ürünlere Göz At
+                            <img src="~/icon/signs-post-solid.svg" style="padding:10px" width="40" />
+                        </button>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function redirectToPage(yonlendirme) {
+            window.location.href = yonlendirme; // Yönlendirme yapılacak URL
+        }
+    </script>
+
+

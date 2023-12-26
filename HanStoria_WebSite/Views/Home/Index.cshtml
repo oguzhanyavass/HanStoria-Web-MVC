@@ -1,0 +1,126 @@
+﻿@using HanStoria_WebSite.Entity;
+@model IEnumerable<ProductViewModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@{
+    ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="globals.css" />
+    <link rel="stylesheet" href="~/Content/mainstyle.css" />
+    <link rel="stylesheet" href="~/Content/headerstyleguide.css" />
+    <link rel="stylesheet" href="~/Content/productslide.css" />
+    <link rel="stylesheet" href="~/Content/discoverSection.css" />
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <title>HanStoria</title>
+</head>
+<body>
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            @for (var i = 0; i < ViewBag.MainSlides.Count; i++)
+            {
+                <li data-target="#carouselExampleIndicators" data-slide-to="@i" @(i == 0 ? "class=active" : "")></li>
+            }
+        </ol>
+        <div class="carousel-inner">
+            @for (var i = 0; i < ViewBag.MainSlides.Count; i++)
+            {
+                <div class="carousel-item @(i == 0 ? "active" : "")">
+                    <img class="d-block w-100" alt="Responsive image" src="@ViewBag.MainSlides[i].PhotoName">
+
+                    <div class="content">
+                        <h3 class="title-text">@ViewBag.MainSlides[i].Title</h3>
+                        <p class="subs-text">@ViewBag.MainSlides[i].Slogan</p>
+                        <div class="buttons">
+                            <div class="button">
+                                <div class="button-content">@ViewBag.MainSlides[i].ButtonContent1</div>
+                            </div>
+                            <div class="button">
+                                <div class="button-content">@ViewBag.MainSlides[i].ButtonContent2</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+        <!-- Diğer carousel kontrolleri -->
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+
+    <!-- Haftanın ürünleri -->
+    <div class="slider-container">
+        <h2>Haftanın Trend Ürünleri</h2>
+        <button class="next">&#10095;</button>
+        <button class="prev">&#10094;</button>
+        <div class="slider">
+            @if (Model != null)
+            {
+                <div class="slider-items">
+                    @foreach (var urun in Model)
+                    {
+                        <div class="cardItem">
+                            <a href="/Home/Details/@urun.Id">
+                                <img src="@urun.PhotoName" alt="@urun.Name">
+                            </a>
+                            <h3 class="ProductName">@urun.Name</h3>
+                            <p class="ProductDesc">@urun.Description</p>
+                            <p class="ProductPrice">₺@urun.Price</p>
+                        </div>
+                    }
+                </div>
+            }
+            else
+            {
+                <p>Model is null.</p>
+            }
+        </div>
+    </div>
+
+    <!-- Keşfet -->
+    <div class="discover-container">
+        <h2>Daha Fazlasını Keşfet</h2>
+        <div class="discover-inner">
+            <div class="card-discover">
+                <img href="/Home/List/3" src="~/img/discover1.jpeg" alt="Resim 1">
+                <a href="/Home/List/3" class="card-discover-button">Ekipmanlar</a>
+            </div>
+            <div class="card-discover">
+                <img href="/Home/List/1" src="~/img/discover2.jpeg" alt="Resim 2">
+                <a href="/Home/List/1" class="card-discover-button">Çadırlar</a>
+            </div>
+            <div class="card-discover">
+                <img href="/Home/List/2" src="~/img/discover3.jpeg" alt="Resim 3">
+                <a href="/Home/List/2" class="card-discover-button">Kamp Eşyaları</a>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="~/Scripts/productslide.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</body>
+</html>
+
+
+
+

@@ -1,0 +1,106 @@
+﻿@model HanStoria_WebSite.Models.ShippingDetails
+@{
+    ViewBag.Title = "Checkout";
+}
+
+<style>
+    /* Field Validation Error */
+    .field-validation-error {
+        color: #f00; /* Kırmızı renk */
+    }
+
+    /* Field Validation Valid */
+    .field-validation-valid {
+        display: none; /* Görünmez */
+    }
+
+    /* Input Validation Error */
+    input.input-validation-error {
+        border: 1px solid #f00; /* Kırmızı kenarlık */
+        background-color: #fee; /* Arka plan rengi */
+        font-weight: bold; /* Kalın font */
+        color: #f00; /* Kırmızı renk */
+    }
+    .validation-summary-errors {
+        font-weight: bold; /* Kalın font */
+        color: #f00; /* Kırmızı renk */
+    }
+    /* Validation Summary Valid */
+    .validation-summary-valid {
+        display: none; /* Görünmez */
+    }
+</style>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Sipariş Bilgileriniz</h2>
+            <p>Lütfen adres bilgilerinizi doldurunuz.</p>
+            <hr />
+            @using (Html.BeginForm())
+            {
+                @Html.ValidationSummary()
+                <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-2 col-form-label">Ad-Soyad</label>
+                    <div class="col-sm-6">
+                        <span class="badge-">
+                            @User.Identity.Name
+                        </span>
+                    </div>
+                </div>
+                <br />
+                <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-2 col-form-label">Adres Tanımı</label>
+                    <div class="col-sm-6">
+                        @Html.TextBoxFor(x => x.AdresBasligi, new { @class = "form-control" })
+                    </div>
+                </div>
+                <br />
+                <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-2 col-form-label">Adres</label>
+                    <div class="col-sm-6">
+                        @Html.TextBoxFor(x => x.Adres, new { @class = "form-control" })
+                    </div>
+                </div>
+                <br />
+                <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-2 col-form-label">Şehir</label>
+                    <div class="col-sm-6">
+                        @Html.TextBoxFor(x => x.Sehir, new { @class = "form-control" })
+                    </div>
+                </div>
+                <br />
+                <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-2 col-form-label">Mahalle</label>
+                    <div class="col-sm-6">
+                        @Html.TextBoxFor(x => x.Mahalle, new { @class = "form-control" })
+                    </div>
+                </div>
+                <br />
+                <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-2 col-form-label">Posta Kodu</label>
+                    <div class="col-sm-6">
+                        @Html.TextBoxFor(x => x.PostaKodu, new { @class = "form-control" })
+                    </div>
+                </div>
+                <br />
+                <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-2 col-form-label"></label>
+                    <div class="col-sm-6">
+                        <button type="submit" class="btn btn-success">Ödemeye Geç</button>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+
+
+
+
+

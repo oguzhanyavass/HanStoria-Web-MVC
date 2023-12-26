@@ -1,0 +1,88 @@
+﻿/* Genel footer stillemesi */
+.footer {
+    margin-top:20px;
+    background-color: #111;
+    color: #fff;
+    padding: 20px 0; /* Footer içeriği ile kenar boşluğu */
+}
+
+/* Footer içeriğinin genel yapısı */
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+.footer h3 {
+    color: #FFF;
+    font-family: Arial;
+    font-size: 12.141px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px; /* 197.683% */
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.footer p {
+    color: #7E7E7E;
+    font-family: Arial;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px; /* 233.333% */
+}
+
+/* Footer bölümlerinin genel yapısı */
+.footer-section {
+    flex: 1 1 150px; /* İçeriklerin eşit genişlikte olması */
+    margin-bottom: 20px;
+}
+
+    /* Footer bağlantıları */
+    .footer-section ul {
+        list-style: none;
+        padding: 0;
+    }
+
+        .footer-section ul li {
+            margin-bottom: 5px;
+
+        }
+
+            .footer-section ul li a {
+                color: #fff;
+                text-decoration: none;
+                color: #7E7E7E;
+                font-family: Arial;
+                font-size: 12px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 28px; /* 233.333% */
+            }
+.media-actions {
+    right: 10px;
+    display: flex;
+    gap: 10px;
+}
+    .media-actions a img:hover {
+        background-color: #f5f5f5;
+        border-radius: 20px;
+    }
+
+    .media-actions a img {
+        width: 30px; /* Opsiyonel: İkon boyutunu ayarlar */
+        height: 30px; /* Opsiyonel: İkon boyutunu ayarlar */
+    }
+/* Footer alt kısmı */
+.footer-bottom {
+    text-align: center;
+    padding-top: 10px;
+}
+
+    .footer-bottom p {
+        margin: 0;
+        font-size: 14px;
+    }

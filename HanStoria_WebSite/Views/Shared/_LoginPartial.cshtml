@@ -1,0 +1,26 @@
+﻿
+    @if (Request.IsAuthenticated)
+    {
+        //Kullanıcı Login Olmuşsa ismini yaz
+
+        <div class="button-container">
+            <div class="nav-item dropdown">
+                <a class="nav-link dropdown" href="/Account" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    @User.Identity.Name
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
+                    <a class="dropdown-item" href="/Account">Siparişlerim</a>
+                    <a class="dropdown-item" href="/Account/Logout">Çıkış Yap</a>
+                </div>
+            </div>
+        </div>
+
+    }
+    else
+    {
+        //Kullanıcı Login Olmamışsa logo göster
+        <div class="button-container">
+            <a href="/Account/Login"><img src="~/icon/user-plus-solid.svg" alt="Hesap"></a>
+        </div>
+    
+    }

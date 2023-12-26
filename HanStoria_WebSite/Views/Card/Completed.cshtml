@@ -1,0 +1,77 @@
+﻿
+@{
+    ViewBag.Title = "Completed";
+}
+<html>
+<head>
+    <style>
+        /* Sayfanın genel stilini ayarla */
+        .container {
+            font-family: Arial, sans-serif; /* Font tipi */
+        }
+
+        /* Başlığın stilini ayarla */
+        h1 {
+            color: #246a73; /* Yazı rengi */
+            text-align: center; /* Ortala */
+            margin-top: 20px; /* Üst boşluk */
+        }
+
+        /* Animasyonun stilini ayarla */
+        .animation {
+            width: 400px; /* Genişlik */
+            height: 300px; /* Yükseklik */
+            margin: 0 auto; /* Ortala */
+        }
+
+        /* Tablonun stilini ayarla */
+        table {
+            width: 80%; /* Genişlik */
+            margin: 20px auto; /* Ortala ve boşluk ver */
+            border-collapse: collapse; /* Kenarlıkları birleştir */
+        }
+
+        /* Tablo başlıklarının stilini ayarla */
+        th {
+            background-color: #246a73; /* Arka plan rengi */
+            color: white; /* Yazı rengi */
+            padding: 10px; /* Dolgu */
+            border: 1px solid black; /* Kenarlık */
+        }
+
+        /* Tablo hücrelerinin stilini ayarla */
+        td {
+            background-color: white; /* Arka plan rengi */
+            color: black; /* Yazı rengi */
+            padding: 10px; /* Dolgu */
+            border: 1px solid black; /* Kenarlık */
+            text-align: center; /* Ortala */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Sipariş tamamlandığını belirten bir başlık ekle -->
+        <h1>Tebrikler! Kamp maceranız için hazırsınız!</h1>
+
+
+        <!-- Sipariş detaylarını gösteren bir tablo oluştur -->
+        <table>
+            <tr>
+                <th>Sipariş Detayları</th>
+                <th>Teslimat Süresi</th>
+            </tr>
+            <tr>
+                <td>
+                    <a href="/Account" class="btn btn-dark btn-sm" target="_blank">
+                        Detaylar
+                        <img src="~/icon/map-solid.svg" width="25">
+                    </a>
+                </td>
+                <td>3-5 iş günü</td>
+            </tr>
+        </table>
+
+    </div>
+</body>
+</html>

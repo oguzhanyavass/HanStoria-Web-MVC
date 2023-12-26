@@ -1,0 +1,185 @@
+﻿@media (max-width: 768px) {
+
+    .content {
+        position: static; /* Mobilde content'in pozisyonunu statik yapabilirsiniz */
+        transform: none; /* Transform'u sıfırlayın */
+        text-align: center; /* İçeriği ortala */
+    }
+
+    .carousel-item img {
+        width: 100%; /* Resmin genişliğini ayarlayın */
+        height: auto; /* Yüksekliği otomatik yapın, oranları koruyun */
+    }
+}
+
+
+.carousel-caption {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+    padding: 20px;
+    z-index: 1;
+}
+
+.buttons {
+    display: flex;
+    justify-content: flex-start; /* Butonları sola hizala */
+    gap: 15px; /* Butonlar arası boşluk */
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 2px solid transparent;
+    border-radius: 20px;
+    background-color: #FF5757;
+    color: #FFF;
+    font-family: Arial;
+    font-weight: bold;
+    font-size: 13px;
+    text-transform: uppercase;
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s; /* Renk geçişlerini yumuşat */
+}
+
+    .button:hover {
+        background-color: #333; /* Hover durumunda arka plan rengi gri */
+        color: #FFF; /* Yazı rengi beyaz olarak kalsın */
+    }
+
+
+    .title-text {
+        color: #FFF;
+        font-family: Arial;
+        font-size: 50px;
+        font-style: normal;
+        font-weight: bold;
+        line-height: 95px; /* 131.148% */
+        text-transform: uppercase;
+        line-height: 0.90;
+        letter-spacing: -0.25px;
+        margin-bottom: 25px;
+        margin-top: 25px;
+    }
+
+    .subs-text {
+        color: #FFF;
+        font-family: Arial;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px; /* 150% */
+        margin-bottom: 25px;
+        margin-top: 25px;
+    }
+
+.carousel-item img {
+    height: fit-content;
+    width:100%;
+    object-fit: cover;
+}
+.carousel {
+    margin-top: -56px; /* Navbar yüksekliği kadar negatif margin */
+}
+
+.content {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: left; /* İçeriği sola hizala */
+}
+
+
+    /*
+    .slider-container {
+    display: flex;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid #000;
+    background: url(../img/sliderItem1.jpeg), lightgray 50% / cover no-repeat;
+}
+
+caption-container {
+    position: absolute;
+    width: 710px;
+    height: 170px;
+    top: 246px;
+    left: 36px;
+    font-family: "Arial-Narrow", Helvetica;
+    font-weight: 400;
+    color: #FFFFFF;
+    font-size: 72.4px;
+    letter-spacing: 0;
+    line-height: 95px;
+}
+.slider-container {
+    position: absolute;
+    width: 519px;
+    height: 65px;
+    top: 417px;
+    left: 36px;
+    font-family: "Arial-Narrow", Helvetica;
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: 24px;
+}
+
+     .div-wrapper {
+        position: absolute;
+        width: 87px;
+        height: 38px;
+        top: 547px;
+        left: 36px;
+        background-color: #ffffff;
+        border-radius: 30px;
+        overflow: hidden;
+    }
+     .text-wrapper {
+        position: absolute;
+        width: 45px;
+        height: 24px;
+        top: 6px;
+        left: 21px;
+        font-family: "Arial-Narrow", Helvetica;
+        font-weight: 400;
+        color: #111111;
+        font-size: 16px;
+        letter-spacing: 0;
+        line-height: 24px;
+        white-space: nowrap;
+    }
+
+    .div {
+        position: absolute;
+        width: 217px;
+        height: 38px;
+        top: 547px;
+        left: 129px;
+        background-color: #ffffff;
+        border-radius: 30px;
+        overflow: hidden;
+    }
+    .text-wrapper-2 {
+        position: absolute;
+        width: 175px;
+        height: 24px;
+        top: 6px;
+        left: 21px;
+        font-family: "Arial-Narrow", Helvetica;
+        font-weight: 400;
+        color: #111111;
+        font-size: 16px;
+        letter-spacing: 0;
+        line-height: 24px;
+        white-space: nowrap;
+    }
+
+
+
+*/

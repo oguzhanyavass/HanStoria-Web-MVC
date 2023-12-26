@@ -1,0 +1,18 @@
+﻿@model HanStoria_WebSite.Models.Card
+
+@if (Request.IsAuthenticated)
+{
+    <div class="button-container">
+        <a href="/Card" class="cart-icon">
+            <img src="~/icon/cart-shopping-solid.svg" alt="Sepet">
+            <span class="cart-count">@Model.CardLines.Count</span>
+        </a>
+    </div>
+
+}
+else
+{
+    <div class="button-container">
+        <a href="/Account/Login"><img src="~/icon/cart-shopping-solid.svg" alt="Sepet"></a>
+    </div>
+}

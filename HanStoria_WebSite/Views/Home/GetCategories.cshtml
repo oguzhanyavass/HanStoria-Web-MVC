@@ -1,0 +1,42 @@
+﻿@model IEnumerable<HanStoriaEntity.Entity.Category>
+@{ 
+    var selectedCategory = Url.RequestContext.RouteData.Values["id"];
+}
+<div class="list-group">
+    <a class="list-group-item" a href="/Home/List">
+            Tüm Kategoriler
+    </a>
+    @foreach (var item in Model)
+    {
+        if (selectedCategory != null)
+        {
+            if (item.Id == int.Parse(selectedCategory.ToString()))
+            {
+                //seçilen kategori ile route id birbirine eşit.
+                <a class="list-group-item active" href="/Home/List/@item.Id">
+                    <!-- PNG dosyasını görüntüleme -->
+                    <img src="~/icon/right.svg" alt="My Icon" width="24" height="24">
+                    @item.Name
+                </a>
+            }
+            else
+            {
+
+                <a class="list-group-item" href="/Home/List/@item.Id">
+                    <!-- PNG dosyasını görüntüleme -->
+                    <img src="~/icon/right.svg" alt="My Icon" width="24" height="24">
+                    @item.Name
+                </a>
+            }
+        }
+        else
+        { 
+            <a class="list-group-item" href="/Home/List/@item.Id">
+                <!-- PNG dosyasını görüntüleme -->
+                <img src="~/icon/right.svg" alt="My Icon" width="24" height="24">
+                @item.Name
+            </a>
+        }
+    }
+</div>
+

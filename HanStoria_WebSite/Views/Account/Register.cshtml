@@ -1,0 +1,253 @@
+﻿@model HanStoria_WebSite.Models.Register
+
+@{
+    ViewBag.Title = "Register";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+    <style>
+        body {
+            background-image: url("../../img/camp2.jpg");
+            background-size: cover;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(33, 33, 33, 0.5);
+            border-radius: 10px;
+            box-shadow: 0 0 10px black;
+        }
+
+        .logo {
+            display: block;
+            margin: 0 auto;
+            width: 200px;
+            height: 200px;
+        }
+
+
+        h1 {
+            text-align: center;
+            color: #fff;
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        .form-group {
+            display: flex;
+            align-items: center;
+            margin: 10px;
+        }
+
+            .form-group label {
+                flex: 1;
+                color: #fff;
+                font-size: 30px;
+                margin-right: 5px;
+            }
+
+            .form-group input {
+                flex: 3;
+                padding: 10px;
+                border: none;
+                border-radius: 20px;
+                border-bottom: 2px solid #ffbd59;
+                outline: none;
+                font-size: 18px;
+            }
+
+                .form-group input:focus {
+                    border-color: #333;
+                    transition: 0.3s;
+                }
+
+                .form-group input[type="submit"] {
+                    width: 100%;
+                    margin-top: 20px;
+                    font-weight: bold;
+                    border-radius: 5px;
+                    color: #333;
+                    background-color: #ffbd59;
+                    cursor: pointer;
+                }
+
+                    .form-group input[type="submit"]:hover {
+                        background-color: #ff5757;
+                        color: #fff;
+                        transition: 0.3s;
+                    }
+
+        .discover-container {
+            display: flex;
+            flex-wrap: wrap;
+            width: 300px;
+            margin: 0 auto;
+            text-align: center;
+            padding-bottom: 30px;
+            padding-top: 30px;
+        }
+
+
+
+        .discover-inner {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px; /* Kartlar arasındaki boşluk */
+            width: 80vw; /* Ekran genişliği kadar */
+            margin-left: calc((100% - 100vw) / 3); /* Ekranın solundan içeriye hizalama yapmak için */
+            margin-right: calc((100% - 100vw) / 3); /* Ekranın sağından içeriye hizalama yapmak için */
+        }
+
+        .card-discover {
+            width: 50px;
+            flex: 0 0 calc(30% - 5px); /* Ekranın üçte biri kadar genişlikte, aralarda 5px boşluk */
+            position: relative;
+            margin-bottom: 10px; /* Kartlar arasındaki boşluk */
+        }
+
+            .card-discover img {
+                width: 100%;
+                height: auto;
+                display: block;
+                border-radius: 20px; /* Opsiyonel: Köşeleri yuvarla */
+            }
+
+        .card-discover-button {
+            position: absolute;
+            bottom: 10px; /* Aşağıdan boşluk */
+            left: 10px; /* Soldan boşluk */
+            padding: 5px 10px;
+            background-color: #ffbd59;
+            text-decoration: none;
+            border-radius: 30px;
+            color: #333;
+            font-family: Arial;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 24px; /* 150% */
+            transition: color 0.3s; /* Geçiş efekti için */
+        }
+
+            .card-discover-button:hover {
+                transition: color 0.3s; /* Geçiş efekti için */
+                color: #fff; /* Buton üzerine gelindiğinde metnin rengi beyaz olacak */
+                background-color: #ff5757; /* Buton rengi değişebilir */
+                text-decoration: none;
+            }
+
+        .clear {
+            clear: both;
+        }
+
+        .link {
+            display: block;
+            font-weight: 400;
+            text-align: center;
+            margin: 10px;
+            font-size: 18px;
+            color: #ffbd59;
+            text-decoration: none;
+        }
+
+            .link:hover {
+                color: #ff5757;
+                transition: 0.3s;
+            }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="~/img/logo-white.svg" alt="Logo" class="logo" />
+        <h1>Kamp Tutkunları Burada</h1>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.SurName, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.SurName, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.SurName, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.UserName, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.RePassword, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.RePassword, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Kullanıcı Oluştur" class="form-control" />
+                </div>
+            </div>
+        }
+        <a href="/Account/Login" class="link">Giriş Yap</a>
+        <div class="discover-container">
+            <div class="discover-inner">
+                <div class="card-discover">
+                    <a href="/Home/List/3"><img src="~/img/discover1.jpeg" alt="Resim 1"></a>
+                    <a href="/Home/List/3" class="card-discover-button">Ekipmanlar</a>
+                </div>
+                <div class="card-discover">
+                    <a href="/Home/List/1"><img src="~/img/discover2.jpeg" alt="Resim 2"></a>
+                    <a href="/Home/List/1" class="card-discover-button">Çadırlar</a>
+                </div>
+                <div class="card-discover">
+                    <a href="/Home/List/2"><img src="~/img/discover3.jpeg" alt="Resim 3"></a>
+                    <a href="/Home/List/2" class="card-discover-button">Kamp Eşyaları</a>
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+</body>
+</html>
+
+
+

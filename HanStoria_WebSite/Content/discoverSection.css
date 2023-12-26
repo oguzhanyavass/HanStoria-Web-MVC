@@ -1,0 +1,67 @@
+﻿.discover-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    padding-bottom: 30px;
+    padding-top: 30px;
+}
+
+    .discover-container h2 {
+        padding-top: 10px;
+        color: #111;
+        text-align: left;
+        font-family: Arial;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 32.4px; /* 135% */
+        float: left; /* Başlığı sola yasla */
+        clear: both; /* H2'nin önceki içeriklerden etkilenmemesi için */
+    }
+
+.discover-inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px; /* Kartlar arasındaki boşluk */
+    width: 100vw; /* Ekran genişliği kadar */
+    margin-left: calc((100% - 100vw) / 2); /* Ekranın solundan içeriye hizalama yapmak için */
+    margin-right: calc((100% - 100vw) / 2); /* Ekranın sağından içeriye hizalama yapmak için */
+}
+
+.card-discover {
+    flex: 0 0 calc(30% - 5px); /* Ekranın üçte biri kadar genişlikte, aralarda 5px boşluk */
+    position: relative;
+    margin-bottom: 10px; /* Kartlar arasındaki boşluk */
+}
+
+    .card-discover img {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 20px; /* Opsiyonel: Köşeleri yuvarla */
+    }
+
+.card-discover-button {
+    position: absolute;
+    bottom: 10px; /* Aşağıdan boşluk */
+    left: 10px; /* Soldan boşluk */
+    padding: 5px 10px;
+    background-color: #fff;
+    text-decoration: none;
+    border-radius: 30px;
+    color: #111;
+    font-family: Arial;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px; /* 150% */
+    transition: color 0.3s; /* Geçiş efekti için */
+}
+    .card-discover-button:hover {
+        color: #fff; /* Buton üzerine gelindiğinde metnin rengi beyaz olacak */
+        background-color: #555; /* Buton rengi değişebilir */
+        text-decoration: none;
+    }

@@ -1,0 +1,72 @@
+﻿@using HanStoria_WebSite.Entity;
+@model IEnumerable<ProductViewModel>
+@{
+    ViewBag.Title = "List";
+}
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HanStoria</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="~/Content/productList.css" />
+    <link rel="stylesheet" href="~/Content/getCategoriesList.css" />
+    <!-- Font Awesome CSS dosyası -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- Font Awesome JS dosyası (opsiyonel, eğer kullanıyorsanız) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+    <div class="container pb-5">
+        <div class="row">
+            <div class="col-md-3 mb-3 ">
+                @Html.Action("GetCategories", "Home")
+            </div>
+            <div class="col-md-9">
+
+                @if (Model.Count() == 0)
+                {
+                    <div class="alert alert-danger" role="alert">
+                        <img src="~/icon/bolt-solid.svg" alt="My Icon" width="24" height="24">
+                        Ürün Bulunamadı
+                    </div>
+                }
+                else
+                {
+                    <div class="alert alert-success" role="alert">
+                        <img src="~/icon/fire-solid.svg" alt="My Icon" width="24" height="24">
+                        <strong>@Model.Count()  Adet </strong>Ürün Bulundu
+                    </div>
+                }
+                    <div class="card-container">
+                <div class="row row-cols-3 g-4">
+                        @foreach (var urun in Model)
+                        {
+                            <div class="col">
+                                <div class="cardItem">
+                                    <a href="/Home/Details/@urun.Id">
+                                        <img src="@urun.PhotoName" alt="@urun.Name">
+                                    </a>
+                                    <h3 class="ProductName">@urun.Name</h3>
+                                    <p class="ProductDesc">@urun.Description</p>
+                                    <p class="ProductPrice">₺@urun.Price</p>
+                                </div>
+                            </div>
+
+                        }
+                        <!-- Diğer kartlar buraya gelecek -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

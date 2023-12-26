@@ -1,0 +1,55 @@
+﻿.cardItem {
+    display: flex;
+    flex-wrap: wrap;
+    flex-shrink: 0;
+    box-sizing: border-box;
+    margin: 10px; /* Kartlar arasındaki mesafe */
+    padding: 20px; /* Kart içeriği ile kart kenarları arasındaki mesafe */
+    background-color: #f2f2f2; /* Kart arka plan rengi */
+    /* Diğer stillendirme özellikleri buraya eklenebilir */
+    border-radius: 20px;
+}
+
+    .cardItem img {
+        padding-bottom: 10px;
+        width: 100%;
+        height: auto;
+        border-radius: 20px;
+    }
+.alert alert-success{
+    border-radius:20px;
+}
+
+.alert alert-danger {
+    border-radius: 20px;
+}
+
+.ProductName {
+    color: #111;
+    font-family: Arial;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px; /* 150% */
+    text-align: left;
+}
+
+.ProductDesc {
+    color: #707072;
+    font-family: Arial;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+}
+
+.ProductPrice {
+    color: #111;
+    font-family: Arial;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px; /* 150% */
+    text-align: left;
+}

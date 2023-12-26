@@ -1,0 +1,21 @@
+﻿.list-group-item a {
+    
+    color: #111;
+    font-family: Arial;
+    font-size: 18px;
+    transition: color 0.3s; /* Geçiş efekti için */
+    text-decoration: none;
+    padding:10px;
+}
+
+.list-group-item {
+    padding: 5px;
+    margin:5px;
+}
+.list-group-item:hover {
+    background-color:#ff5757;
+    color:#fff;
+}
+    .list-group-item a:hover {
+        color: #fff;
+    }

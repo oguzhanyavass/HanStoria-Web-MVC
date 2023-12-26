@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="globals.css" />
+    <link rel="stylesheet" href="~/Content/headerstyle.css" />
+    <link rel="stylesheet" href="~/Content/footerstyle.css" />
+    <link rel="stylesheet" href="~/Content/headerstyleguide.css" />
+    <meta charset="UTF-8">
+    <meta http-equiv="XA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width-device-width,
+    initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <title>HanStoria</title>
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar navbar-expand-lg navbar-light justify-content-center">
+            <a class="navbar-brand" href="/Home"><img src="~/img/logo.svg" alt="Logo"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="/Home" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Ana Sayfaya Dön
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
+
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="/Category" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Kategorileri Yönet
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
+                            <a class="dropdown-item" href="/Category/Edit">Düzenle</a>
+                            <a class="dropdown-item" href="/Category/Details">Güncelle</a>
+                            <a class="dropdown-item" href="/Category/Delete">Sil</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="/Product" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Ürünleri Yönet
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
+                            <a class="dropdown-item" href="/Product/Edit">Düzenle</a>
+                            <a class="dropdown-item" href="/Product/Details">Güncelle</a>
+                            <a class="dropdown-item" href="/Product/Delete">Sil</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="/Order" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Siparişleri Yönet
+                        </a>
+                    </li>
+                </ul>
+                <div class="search">
+                    <div class="search-button-container">
+                        <a href="#"><img src="~/icon/arama.svg" alt="Git"></a>
+                    </div>
+                    <input type="text" name="search" autocomplete="off" class="search input" placeholder="Ara" aria-label="Ürün Ara" role="combobox" aria-expanded="false">
+                </div>
+            </div>
+        </nav>
+    </header>
+    @RenderBody()
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>MAĞAZA BUL</h3>
+                <h3>ÜYE OL</h3>
+                <h3>ÜYE GİRİŞİ</h3>
+                <h3>GERİ BİLDİRİM</h3>
+                <h3>PROMOSYON KODLARI</h3>
+            </div>
+            <div class="footer-section">
+                <h3>Yardım Al</h3>
+                <ul>
+                    <li><a href="#">Sipariş Durumu</a></li>
+                    <li><a href="#">Kargo ve Teslimat</a></li>
+                    <li><a href="#">Bize Ulaşın</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Hakkımızda</h3>
+                <p>Şirketinizin kısa bir tanımı.</p>
+            </div>
+
+            <div class="footer-section">
+                <div class="media-actions">
+                    <a href="#"><img src="~/icon/instagram.svg" alt="Instagram"></a>
+                    <a href="#"><img src="~/icon/youtube.svg" alt="Youtube"></a>
+                </div>
+            </div>
+
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 HanStoria - Tüm Hakları Saklıdır.</p>
+        </div>
+    </footer>
+    <script src="~/Scripts/headerscript.js"></script>
+</body>
+</html>
