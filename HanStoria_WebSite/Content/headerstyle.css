@@ -128,6 +128,18 @@
     .button-container:hover {
         background-color: #555; /* Opsiyonel: Fare üzerine gelindiğinde menü arka plan rengini değiştirir */
     }
+
+.search-button-css {
+    border: 1px solid #ccc; /* Çerçeve rengi ve kalınlığı */
+    border-radius: 100px; /* Yuvarlatılmış kenarlar */
+    padding: 5px 10px; /* Düğme içeriği etrafındaki boşluk */
+    transition: background-color 0.3s; /* Geçiş efekti */
+}
+
+    .search-button-css:hover {
+        background-color: #ff5757; /* Üzerine gelindiğinde arka plan rengi */
+    }
+
 .search input[type="text"] {
     flex: 1;
     margin-left: 10px;

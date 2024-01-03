@@ -58,19 +58,22 @@
                         </div>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown" href="/Home/List/5" id="navbarDropdown1" role="button"  aria-expanded="false">
+                        <a class="nav-link dropdown" href="/Home/List/5" id="navbarDropdown1" role="button" aria-expanded="false">
                             İndirimler
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
                         </div>
                     </li>
                 </ul>
-                <div class="search">
-                    <div class="button-container">
-                        <a href="#"><img src="~/icon/arama.svg" alt="Git"></a>
+                <form action="@Url.Action("Search", "Home")" method="GET">
+                    <div class="search">
+                        <div class="button-container">
+                            <button type="submit" class="search-button-css"><img src="~/icon/arama.svg" alt="Git"></button>
+                        </div>
+                        <input type="text" name="q" autocomplete="off" class="search input" placeholder="Ara" aria-label="Ürün Ara" role="combobox" aria-expanded="false">
                     </div>
-                    <input type="text" name="search" autocomplete="off" class="search input" placeholder="Ara" aria-label="Ürün Ara" role="combobox" aria-expanded="false">
-                </div>
+                </form>
+
                 <div class="user-actions">
 
                     @Html.Partial("_LoginPartial")

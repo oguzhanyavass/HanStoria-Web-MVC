@@ -77,5 +77,11 @@ namespace HanStoria_WebSite.Controllers
         {
             return PartialView(_context.Categories.ToList());
         }
+
+        public ActionResult Search(string q)
+        {
+            var products = _context.Products.Where(p => p.Name.Contains(q)).ToList();
+            return View(products);
+        }
     }
 }
